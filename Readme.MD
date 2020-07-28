@@ -4,7 +4,7 @@
 # Requirements  
 MATLAB R2018a / CUDA GPU    
 # How do I run this?
-**Run main.m -> wave data will be automatically saved in (time steps X ON/OFF RGC states) matrix format under Code\module_retinal_wave\EXPORT\yyyy-mm-dd,HH-MM**
+**Run rwave/main.m -> wave data will be automatically saved in (time steps X ON/OFF RGC states) matrix format under rwave/export/yyyy-mm-dd,HH-MM**
 
 **ON/OFF RGC positions are saved as well, for later reconstruction of waveshapes.**    
 # Model architecture  
