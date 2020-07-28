@@ -1,0 +1,6 @@
+function rotated_image = function_imrotate(image, rot_angle_degree)
+    tform = affine2d([cosd(rot_angle_degree)    -sind(rot_angle_degree)     0; ...
+                      sind(rot_angle_degree)     cosd(rot_angle_degree)     0; ...
+                      0                          0                          1]);
+      rotated_image = imwarp(image, tform, 'interp', 'bilinear', 'fillvalues', nan);
+end

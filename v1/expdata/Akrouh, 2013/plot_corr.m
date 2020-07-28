@@ -1,0 +1,22 @@
+DIFF = load("OFF-ON.csv");
+[~,ind] = sort(DIFF(:,1));
+time_1 = DIFF(ind,1);
+corr_1 = DIFF(ind,2);
+SAME = load("Same.csv");
+[~,ind] = sort(SAME(:,1));
+time_2 = SAME(ind,1);
+corr_2 = SAME(ind,2);
+figure; plot(time_1,imgaussfilt(corr_1,0.5),'linewidth',3);
+hold on; plot(time_2,imgaussfilt(corr_2,0.5),'linewidth',3);
+
+ON = load("ON_burst.csv");
+[~,ind] = sort(ON(:,1));
+time_ON = ON(ind,1);
+volt_ON = ON(ind,2);
+OFF = load("OFF_burst.csv");
+[~,ind] = sort(OFF(:,1));
+time_OFF = OFF(ind,1);
+volt_OFF = OFF(ind,2);
+figure; plot(time_ON,imgaussfilt(volt_ON,0.5));
+hold on; plot(time_OFF,imgaussfilt(volt_OFF,0.5));
+axis tight;
